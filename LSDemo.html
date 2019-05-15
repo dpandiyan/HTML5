@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage Demo</title>
+</head>
+<body>
+    <h1>Local Storage counter></h1>
+    <button id="btnCount" onclick="incrementCounter()">Click to Increase</button>
+    <label id="lblCounterValue"></label>
+    <button id="btnClear" onclick="clearCounter()">Click to Reset</button>
+    <label for="" id="lblMessage"></label>
+    <br>
+    <br>
+
+    <a href="Index1.html">Home</a>
+
+    <script>
+        var lblCounterRef = document.getElementById("lblCounterValue")
+        var clearCounter = function(){
+            if (localStorage.counter != null)   
+     {
+         localStorage.setItem("counter","1")
+     }
+     lblCounterRef.innerHTML = localStorage.counter;
+        }
+    var incrementCounter=function(){
+        if (localStorage==null)
+        {
+document.getElementById("lblMessage").innerHTML="Local storage is null"
+        }
+     else if (localStorage.counter == null)   
+     {
+         localStorage.setItem("counter","1")
+     }
+     else if (localStorage.counter=="")
+     {
+            localStorage.counter=1
+     }
+     else
+     {
+         ++localStorage.counter
+     }
+     lblCounterRef.innerHTML = localStorage.counter;
+    }
+    </script>
+</body>
+</html>

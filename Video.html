@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>
+        HTML tutorial - video demo
+    </title>
+</head>
+
+<body>
+    <h1>Welcome to HTML 5 video tutorail</h1>
+
+    <button id="btnPlay" onclick="vidPlay()" name="Play">Play</button>
+    <button id="btnPause" onclick="vidPause()" name="PAuse">Pause</button>
+
+    <video id="vdCog" controls>
+        <source src="VID-20190228-WA0033.mp4" type="video/mp4">
+    </video>
+    <br />
+    
+
+    <h1>You tube video</h1>   
+
+    <iframe src="https://www.youtube.com/embed/TjENybHqy1g"></iframe>
+
+        <a href="Index1.html">Home</a>
+        <script>
+            var videCog = document.getElementById("vdCog")
+
+            var vidPlay = function () {
+                console.log("Hi from play video")
+                videCog.play()
+            }
+            var vidPause = function () {
+                videCog.pause()
+            }
+        </script>
+</body>
+
+</html>

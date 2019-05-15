@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GeoLocation Demo</title>
+</head>
+<body>
+    <h1>Geo Kocation</h1>
+<button onclick="GetCurrentPosition()">Get current Position</button>
+    <script>
+    var GetCurrentPosition = function(){
+        navigator.geolocation.getCurrentPosition(OnSuccessFunction, OnErrorFunction)
+    }
+    var OnSuccessFunction= function(location){
+        console.log(location)
+        var lati = location.coords.latitude
+        var longi = location.coords.longitude
+        console.log("latitude:" + lati)
+        console.log("longitude:" + longi)
+    }
+    var OnErrorFunction = function()
+    {
+        console.log(console.error);
+        
+    }
+    </script>
+</body>
+</html>

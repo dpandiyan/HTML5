@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag drop demo</title>
+    <link rel="stylesheet" href="CSS/DragDrop.css"></head>
+    
+
+<body>
+    <h1>Drag drop sample</h1>
+
+<div id="divLeft" ondragover="dragStarted(event)">
+    <img id="imgDownload" src="images/download1.jfif" alt="" srcset="" ondragstart="imageDragged(event)">
+</div>
+<div id="divRight" ondragover="prepareForDrop(event)" ondrop="dropImage(event)">
+    Image dragged here
+</div>
+<br>
+    <a href="Index1.html">Home</a>
+    <script>
+    
+    var dragStarted=function(e){
+        e.preventDefault()
+        console.log(e)
+    }
+
+    var imageDragged = function(e){
+        debugger
+        console.log("Dragging Logo")
+        e.dataTransfer.setData("image", e.target.id)
+    }
+
+    var prepareForDrop = function(e){
+        e.preventDefault()
+        console.log(e)
+    }
+
+    var dropImage = function(e)
+    {
+        
+        var newImageID=e.dataTransfer.getData("image")
+        console.log(newImageID)
+        var tempLogo = document.getElementById(newImageID)
+        console.log(e.target.id)
+        e.target.innerHTML= ""
+        e.target.appendChild(tempLogo)
+    }
+    
+    </script>
+</body>
+</html>
